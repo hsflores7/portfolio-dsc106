@@ -4,3 +4,6 @@ body {
        */
     font: 100%/1.5 system-ui;
 }
+nav {
+    font: 30%;
+}
