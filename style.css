@@ -3,7 +3,55 @@ body {
         and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin: 0 auto;
+    padding: 20px;
 }
+
+img {
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.02); /* Zoom in */
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Flexible columns */
+    gap: 1em; /* Space between articles */
+}
+
+.projects article {
+    display: grid;
+    grid-template-rows: subgrid; /* Enable subgrid alignment */
+    grid-row: span 3; /* Ensure each article spans 3 rows */
+    gap: 0.5em; /* Space between the content of the article */
+    background-color: #fff; /* Optional: Add background for better visuals */
+    border: 1px solid #ccc; /* Optional: Add border */
+    border-radius: 8px; /* Optional: Rounded corners */
+    padding: 1em; /* Optional: Add padding for spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+.projects article img {
+    width: 100%; /* Ensure the image fits the grid cell */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Match the container's border radius */
+}
+
+.projects article h2 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.2em; /* Adjust heading size */
+}
+
+.projects article p {
+    margin: 0.5em 0 0; /* Optional: Add spacing above the description */
+}
+
 /* Navigation bar styling */
 .navbar {
     background-color: #5BCEFA;
@@ -29,4 +77,59 @@ body {
     background-color: #F5A9B8; /* Slightly lighter background on hover */
     color: rgb(255, 255, 255); /* Keeps text white on hover */
     border-radius: 8px; /* Optional: adds rounded corners on hover */
+}
+
+/* Form styling */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+form label {
+    display: block;
+    margin-block: 0.5rem;
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-block: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form input:focus,
+form textarea:focus,
+form button:focus {
+    outline: none;
+    border-color: #5BCEFA;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form button {
+    background-color: #5BCEFA;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #46aed7;
 }
