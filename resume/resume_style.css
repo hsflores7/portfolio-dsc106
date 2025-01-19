@@ -78,15 +78,16 @@ li {
 
 /* Navigation bar styling */
 .navbar {
-    background-color: #0c9dc8; /* Dark background color */
+    background-color: #5BCEFA;
     overflow: hidden;
     display: flex;
     justify-content: center; /* Centers the nav links */
     padding: 10px 0;
+    border-radius: 10px;
 }
 
 .navbar a {
-    color: white; /* White text color */
+    color: rgb(0, 0, 0); /* White text color */
     text-decoration: none; /* Removes underline */
     padding: 10px 15px; /* Adds space inside each link */
     font-size: 1rem; /* Responsive font size */
@@ -97,7 +98,7 @@ li {
 }
 
 .navbar a:hover {
-    background-color: #575757; /* Slightly lighter background on hover */
-    color: white; /* Keeps text white on hover */
-    border-radius: 4px; /* Optional: adds rounded corners on hover */
+    background-color: #F5A9B8; /* Slightly lighter background on hover */
+    color: rgb(255, 255, 255); /* Keeps text white on hover */
+    border-radius: 8px; /* Optional: adds rounded corners on hover */
 }
