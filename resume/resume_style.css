@@ -87,7 +87,7 @@ li {
 }
 
 .navbar a {
-    color: rgb(0, 0, 0); /* White text color */
+    color: rgb(0, 0, 0);
     text-decoration: none; /* Removes underline */
     padding: 10px 15px; /* Adds space inside each link */
     font-size: 1rem; /* Responsive font size */
