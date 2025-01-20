@@ -62,6 +62,7 @@ article:hover {
     background-color: #5BCEFA;
     overflow: hidden;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center; /* Centers the nav links */
     padding: 10px 0;
     border-radius: 10px;
