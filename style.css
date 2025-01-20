@@ -16,6 +16,14 @@ img:hover {
     transform: scale(1.02); /* Zoom in */
 }
 
+article {
+    transition: transform 0.3s ease-in-out
+}
+
+article:hover {
+    transform: scale(1.02); /* Zoom in */
+}
+
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Flexible columns */

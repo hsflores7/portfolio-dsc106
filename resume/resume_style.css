@@ -1,5 +1,6 @@
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    font: 100%/1.5 system-ui;
     margin: 0;
     padding: 0;
     line-height: 1.5;
@@ -7,7 +8,7 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 100ch;
     margin: 0 auto;
     padding: 20px;
 }
@@ -55,6 +56,7 @@ li {
 }
 
 .subheading {
+    font-size: 1.2rem;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
