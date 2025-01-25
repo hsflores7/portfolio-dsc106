@@ -13,7 +13,6 @@ let nav = document.createElement('nav');
 nav.classList.add('navbar');
 document.body.prepend(nav);
 
-// Add links to the <nav>
 for (let p of pages) {
     let url = p.url;
     let title = p.title;
