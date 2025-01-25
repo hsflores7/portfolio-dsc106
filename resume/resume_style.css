@@ -1,17 +1,37 @@
-body {
-    /* font-family: 'Source Sans Pro', sans-serif; */
-    font: 100%/1.5 system-ui;
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    color: #3f3f3f;
+:root[data-color-scheme='light'] {
+    --background-color: #ffffff;
+    --nav-text-color: #000000;
+    --text-color: #000000;
+    --accent-color: #5BCEFA;
+    --hover-color: #F5A9B8;
+    --border-color: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --note-bg-color: rgba(44, 132, 250, 0.2);
+    --note-border-color: #183385;
 }
 
-.container {
+/* Dark mode overrides */
+:root[data-color-scheme='dark'] {
+    --background-color: #121212;
+    --nav-text-color: #000000;
+    --text-color: #e0e0e0;
+    --accent-color: #5BCEFA;
+    --hover-color: #F5A9B8;
+    --border-color: #444;
+    --shadow-color: rgba(0, 0, 0, 0.6);
+    --note-bg-color: rgba(44, 132, 250, 0.1);
+    --note-border-color: #5BCEFA;
+}
+
+body {
+    font: 100%/1.5 system-ui;
     max-width: 100ch;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
+
 
 h1, h2 {
     text-transform: uppercase;
@@ -80,28 +100,34 @@ li {
 
 /* Navigation bar styling */
 .navbar {
-    background-color: #5BCEFA;
+    background-color: var(--accent-color);
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centers the nav links */
+    justify-content: center;
     padding: 10px 0;
     border-radius: 10px;
 }
 
 .navbar a {
-    color: rgb(0, 0, 0);
-    text-decoration: none; /* Removes underline */
-    padding: 10px 15px; /* Adds space inside each link */
-    font-size: 1rem; /* Responsive font size */
-    display: block; /* Ensures proper spacing */
+    color: var(--nav-text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1rem;
     text-align: center;
-    flex: 1; /* Makes links flex and grow evenly */
-    max-width: 200px; /* Optional: Prevents links from growing too wide */
+    flex: 1;
+    max-width: 200px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: #F5A9B8; /* Slightly lighter background on hover */
-    color: rgb(255, 255, 255); /* Keeps text white on hover */
-    border-radius: 8px; /* Optional: adds rounded corners on hover */
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    border-radius: 8px;
+}
+
+.current {
+    background-color: #F5A9B8;
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
 }
