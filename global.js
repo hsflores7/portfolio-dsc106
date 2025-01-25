@@ -1,4 +1,4 @@
-const ARE_WE_HOME = location.pathname === '/' || location.pathname === '/index.html';
+const ARE_WE_HOME = location.pathname === 'portfolio-dsc106/' || location.pathname === '/index.html';
 
 let pages = [
     { url: '', title: 'Home' },
