@@ -1,4 +1,4 @@
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
+const ARE_WE_HOME = location.pathname === '/' || location.pathname === '/index.html';
 
 let pages = [
     { url: '', title: 'Home' },
