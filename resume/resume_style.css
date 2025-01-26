@@ -94,6 +94,7 @@ li {
 
 .skills span {
     background-color: #f0f0f0;
+    color: var(--nav-text-color);
     padding: 5px 10px;
     border-radius: 5px;
 }

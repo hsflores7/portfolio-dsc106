@@ -5,8 +5,7 @@ let pages = [
     { url: 'projects/', title: 'Projects' },
     { url: 'contact/', title: 'Contact' },
     { url: 'resume/', title: 'Resume' },
-    { url: 'hyperfixations/', title: 'Hyperfixations' },
-    { url: 'https://github.com/hsflores7', title: 'GitHub' }
+    { url: 'hyperfixations/', title: 'Hyperfixations' }
 ];
 
 let nav = document.createElement('nav');
