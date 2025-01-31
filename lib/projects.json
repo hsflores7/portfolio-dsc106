@@ -12,6 +12,18 @@
         "description": "My friends and I worked on a game for GMTK Game Jam, we unfortunatly couldn't compleate it, however we are still proud of what we did accomplish within 48 hours. I hope that oneday we can put up a little play ground for people to at least we what we were cooking!"
     },
     {
+        "title": "D&D Roll Distributions",
+        "year": 2024,
+        "image": "dnd-dist.png",
+        "description": "Created some simple python code to create dnd roll distributions with the plotly graph library. Next step, create an interactive webpage!"
+    },
+    {
+        "title": "Meal Generator",
+        "year": 2024,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": ""
+    },
+    {
         "title": "Pantry Pal",
         "year": 2023,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -21,54 +33,42 @@
         "title": "",
         "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Obcaecati est officiis repellat, a culpa sequi odit quasi saepe, minima pariatur libero! Libero eaque facere iste beatae voluptatem nemo eius nobis quod, excepturi deleniti, explicabo, officia vel tempora. Nam."
+        "description": ""
     },
     {
         "title": "",
         "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Id repellendus ipsam voluptatem possimus non voluptates incidunt commodi dolores illum, eveniet quod, nemo aliquam dicta. Itaque, molestias perferendis numquam deleniti deserunt cum quam reiciendis corrupti expedita eaque, veritatis officiis?"
+        "description": ""
     },
     {
         "title": "",
         "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Voluptatem nesciunt aliquid perspiciatis ab aperiam obcaecati id quasi alias, quo fugiat earum minus repellendus mollitia repellat nulla, porro eveniet voluptatum consectetur praesentium impedit aliquam placeat! Magnam nobis aliquam autem?"
+        "description": ""
     },
     {
         "title": "",
         "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Unde voluptates iste quibusdam nam. In placeat laudantium architecto a veritatis repellendus quidem veniam, velit labore sit incidunt tenetur minima ab distinctio nihil illo voluptates at neque! Ullam, omnis excepturi?"
+        "description": ""
     },
     {
         "title": "",
         "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Dolore in veritatis, est repellendus incidunt ipsum provident accusamus voluptates facilis, suscipit nemo harum, ea tempora officia sapiente enim. Ut inventore ipsam delectus iusto? Iste aperiam minus ullam fuga itaque?"
+        "description": ""
     },
     {
         "title": "",
         "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Quo odit esse architecto alias ex at aliquid facere modi facilis repudiandae totam, hic, fugit culpa quia laborum quas non odio? Commodi pariatur molestias amet unde voluptatum architecto distinctio voluptas?"
+        "description": ""
     },
     {
         "title": "",
         "year": 2022,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Dicta sit vero perspiciatis dolor quasi deleniti quibusdam, libero labore at est, recusandae voluptatem blanditiis numquam ipsum! Totam similique quae sunt earum sequi in illo quo adipisci quidem, at nobis?"
-    },
-    {
-        "title": "",
-        "year": 2022,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Molestias quisquam consectetur rem, vero quae ut maiores natus nobis mollitia hic pariatur aliquam! Provident quo sit nemo. Minima provident optio animi alias eius? Iure quae facilis facere velit sint!"
-    },
-    {
-        "title": "",
-        "year": 2022,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Soluta voluptas voluptatem nesciunt libero aperiam expedita amet hic voluptates dolorem maxime aliquam maiores quaerat, placeat ipsa numquam delectus unde! Nihil laborum numquam optio voluptatum soluta qui quasi eligendi ullam!"
+        "description": ""
     }
 ]
