@@ -100,9 +100,6 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
         return;
     }
 
-    // Detect if we're on the home page or projects page
-    const isHomePage = window.location.pathname.includes('index.html') || window.location.pathname === '/';
-
     // Clear existing content
     containerElement.innerHTML = '';
 
@@ -116,7 +113,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
             imagePath = project.image; // Online image, use as is
         } else {
             // Local image: Adjust path based on current page
-            imagePath = isHomePage ? `lib/${project.image}` : `../lib/${project.image}`;
+            imagePath = ARE_WE_HOME ? `images/${project.image}` : `../images/${project.image}`;
         }
 
         article.innerHTML = `
