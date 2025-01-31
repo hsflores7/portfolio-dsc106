@@ -78,3 +78,50 @@ setColorScheme(savedColorScheme === 'light dark' ? getDefaultColorScheme() : sav
 
 // Update the dropdown to reflect the saved preference
 select.value = savedColorScheme;
+
+
+export async function fetchJSON(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch projects: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching or parsing JSON data:', error);
+        return [];
+    }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+    if (!containerElement) {
+        console.error('Invalid container element');
+        return;
+    }
+
+    // Clear existing content
+    containerElement.innerHTML = '';
+
+    // Iterate through projects and create HTML structure
+    projects.forEach((project) => {
+        const article = document.createElement('article');
+        article.innerHTML = `
+            <${headingLevel}>${project.title}</${headingLevel}>
+            <img src="${project.image}" alt="${project.title}">
+            <p>${project.description}</p>
+        `;
+        containerElement.appendChild(article);
+    });
+
+    // If no projects exist, display a placeholder message
+    if (projects.length === 0) {
+        containerElement.innerHTML = '<p>No projects found.</p>';
+    }
+}
+
+
+
+export async function fetchGitHubData(username) {
+    return fetchJSON(`https://api.github.com/users/${username}`);
+}

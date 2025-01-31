@@ -206,3 +206,51 @@ blockquote.note::before {
     font-size: 0.75em;
     padding-bottom: 0.125rem;
 }
+
+
+#profile-stats {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 15px;
+    max-width: 600px;
+}
+
+#profile-stats img {
+    border-radius: 50%;
+}
+
+#profile-stats dl {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 10px 40px;
+    text-align: center;
+}
+
+#profile-stats dt {
+    font-weight: bold;
+    grid-row: 1;
+}
+
+#profile-stats dd {
+    grid-row: 2;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    #profile-stats {
+        flex-direction: column; /* Stack avatar on top */
+        align-items: center;
+        gap: 10px; /* Reduce gap between avatar and stats */
+    }
+
+    #profile-stats dl {
+        grid-template-columns: repeat(1, 1fr); /* 🔥 Change to single column on small screens */
+        gap: 10px; /* Reduce spacing */
+    }
+}
+
+
