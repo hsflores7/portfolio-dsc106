@@ -39,6 +39,8 @@ img {
     box-shadow: 0 4px 8px var(--shadow-color);
     transform: scale(1);
     transition: transform 0.3s ease-in-out;
+    width: min(100%, 500px);
+    height: auto;
 }
 
 img:hover {
