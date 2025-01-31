@@ -219,8 +219,12 @@ blockquote.note::before {
 }
 
 #profile-stats img {
-    border-radius: 50%;
+    width: 150px; /* Keeps the image small */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: Makes the image circular */
+    box-shadow: 0 4px 8px var(--shadow-color);
 }
+
 
 #profile-stats dl {
     display: grid;
@@ -244,14 +248,14 @@ blockquote.note::before {
 
 @media (max-width: 600px) {
     #profile-stats {
-        flex-direction: column; /* Stack avatar on top */
+        flex-direction: column;
         align-items: center;
-        gap: 10px; /* Reduce gap between avatar and stats */
+        gap: 10px;
     }
 
     #profile-stats dl {
-        grid-template-columns: repeat(1, 1fr); /* 🔥 Change to single column on small screens */
-        gap: 10px; /* Reduce spacing */
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px; 
     }
 }
 
