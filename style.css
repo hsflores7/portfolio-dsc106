@@ -188,7 +188,7 @@ article:hover {
 
 .projects article {
     display: grid;
-    grid-template-rows: subgrid;
+    grid-template-rows: auto;
     grid-row: span 3;
     gap: 0.5em;
     background-color: var(--background-color);
@@ -202,6 +202,11 @@ article:hover {
     width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+.projects article h2 {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .projects article h2,
