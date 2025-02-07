@@ -179,7 +179,7 @@ article:hover {
     transform: scale(1.02);
 }
 
-/* Projects */
+/* ----------------------------- Projects ----------------------------- */
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -218,7 +218,143 @@ article:hover {
     margin: 0.5em 0 0;
 }
 
-/* Navbar */
+.project-year {
+    color: rgb(100, 100, 100);
+    font-family: Baskerville, serif;
+    font-variant-numeric: oldstyle-nums;
+    font-size: 1em;
+}
+
+/* ----------------------------- Pie Char ----------------------------- */
+.chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em; /* Space between chart and legend */
+    max-width: 50em;
+    margin: auto;
+    flex-wrap: nowrap; /* Prevents stacking */
+    margin-bottom: 1.2em; /* Add extra space below */
+}
+
+/* Pie chart scaling */
+#projects-pie-plot {
+    width: clamp(150px, 25vw, 250px); /* Dynamic size, but not too small or too large */
+    height: clamp(150px, 25vw, 250px);
+    flex-shrink: 0; /* Prevents excessive shrinking */
+}
+
+
+path {
+    cursor: pointer;
+    transition: opacity 300ms ease-in-out, fill 200ms ease-in-out;
+}
+
+/* Dim other slices when one is hovered */
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+}
+
+/* Highlight selected wedge */
+path.selected {
+    fill: oklch(60% 45% 0) !important;
+}
+
+
+/* Legend container - dynamically resizes */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em; /* Reduce gap for small screens */
+    padding: 0.6em;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--note-bg-color);
+    max-width: 100%; /* Prevents it from being too large */
+}
+
+/* Legend items resize based on content */
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.3em 0.6em; /* Tighter padding */
+    white-space: nowrap; /* Prevents awkward multi-line wrapping */
+    /* background: var(--background-color); Optional: Keeps contrast */
+    border-radius: 6px; /* Rounded edges */
+    font-size: clamp(0.8rem, 1vw, 1rem); /* Adjusts size based on screen */
+}
+
+/* Swatches (Color Indicators) - Fixed Size */
+.swatch {
+    width: 0.8em;
+    height: 0.8em;
+    background-color: var(--color);
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 600px) {
+    .chart-container {
+        max-width: 100%;
+        gap: 0.6em;
+    }
+
+    .legend {
+        justify-content: center;
+        max-width: 80%;
+        gap: 0.3em;
+        padding: 0.4em;
+    }
+
+    .legend-item {
+        font-size: 0.9rem; /* Slightly smaller font on small screens */
+        padding: 0.2em 0.5em; /* Less padding to fit more content */
+    }
+}
+
+/* ----------------------------- Search Bar ----------------------------- */
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+/* Search Bar Styling */
+.searchBar {
+    width: 90%; /* Takes most of the screen width */
+    max-width: 40em; /* Prevents excessive width */
+    padding: 0.8em 1em;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: 0px 2px 5px var(--shadow-color);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* On focus, make the search bar pop */
+.searchBar:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0px 4px 10px var(--shadow-color);
+}
+
+/* Ensure it fits light/dark mode */
+:root[data-color-scheme="light"] .searchBar {
+    border-color: #ccc;
+}
+
+:root[data-color-scheme="dark"] .searchBar {
+    border-color: #444;
+}
+
+
+/* ----------------------------- Navbar ----------------------------- */
 .navbar {
     background-color: var(--accent-color);
     overflow: hidden;
@@ -252,7 +388,24 @@ article:hover {
     border-radius: 30px;
 }
 
-/* Forms */
+@media (max-width: 510px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        max-width: 600px;
+        min-width: 210px;
+    }
+
+    .navbar a {
+        width: 70vw;
+        max-width: 600px;
+        min-width: 100px;
+        padding: 2.3vw;
+    }
+}
+
+/* ----------------------------- Forms ----------------------------- */
 form * {
     box-sizing: border-box;
 }
@@ -316,7 +469,7 @@ form button:hover {
     background-color: var(--hover-color);
 }
 
-/* Notes */
+/* ----------------------------- Notes ----------------------------- */
 p.note,
 blockquote.note {
     background: var(--note-bg-color);
@@ -338,7 +491,7 @@ blockquote.note::before {
     padding-bottom: 0.125rem;
 }
 
-
+/* ----------------------------- Profile ----------------------------- */
 #profile-stats {
     display: flex;
     align-items: center;
@@ -349,14 +502,10 @@ blockquote.note::before {
 
 #profile-stats img {
     width: 150px;
-    /* Keeps the image small */
     height: auto;
-    /* Maintain aspect ratio */
     border-radius: 50%;
-    /* Optional: Makes the image circular */
     box-shadow: 0 4px 8px var(--shadow-color);
 }
-
 
 #profile-stats dl {
     display: grid;
@@ -391,19 +540,38 @@ blockquote.note::before {
     }
 }
 
-@media (max-width: 510px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        width: 90vw;
-        max-width: 600px;
-        min-width: 210px;
-    }
+/* Theme Selector */
+.theme-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
 
-    .navbar a {
-        width: 70vw;
-        max-width: 600px;
-        min-width: 100px;
-        padding: 2.3vw;
-    }
+/* Compact Dropdown */
+.color-scheme {
+    background: var(--background-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px var(--shadow-color);
+}
+
+/* Dropdown Styling */
+#theme-switcher {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: var(--background-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover & Focus Effects */
+#theme-switcher:hover,
+#theme-switcher:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0px 3px 6px var(--shadow-color);
+    outline: none;
 }

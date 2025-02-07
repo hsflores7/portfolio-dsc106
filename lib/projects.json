@@ -30,10 +30,10 @@
         "description": "Developed an app using ChatGPT, Whisper, and DALL-E APIs, creating recipes from voice input into the app and storing account data via a MongoDB database. Course Project for CSE 110: Software Engineering at UC San Diego."
     },
     {
-        "title": "",
-        "year": 2022,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "title": "Choice Forest",
+        "year": 2020,
+        "image": "natures-beauty.png",
+        "description": "For my final project in my Creative Writing class in my senior year of high school. I created a choose your own adventure story and used my new knowledge of Java to write an in compiler way of making each choice. I had only knew programming from my APCS class and I wanted to try to make something cool with that knowledge. Maybe one day I'll upgrade it to a more user friendly webpage!"
     },
     {
         "title": "",
@@ -55,19 +55,19 @@
     },
     {
         "title": "",
-        "year": 2022,
+        "year": 2021,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": ""
     },
     {
         "title": "",
-        "year": 2022,
+        "year": 2021,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": ""
     },
     {
         "title": "",
-        "year": 2022,
+        "year": 2021,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": ""
     }

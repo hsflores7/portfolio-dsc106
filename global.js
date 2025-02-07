@@ -39,24 +39,29 @@ for (let p of pages) {
 document.body.insertAdjacentHTML(
     'afterbegin',
     `
-    <label class="color-scheme">
-        Theme:
-        <select id="theme-switcher">
-            <option value="light dark">Automatic</option>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-        </select>
-    </label>
+    <div class="theme-container">
+        <label class="color-scheme">
+            <span></span>
+            <select id="theme-switcher">
+                <option value="light dark">Auto</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+            </select>
+        </label>
+    </div>
     `
 );
 
 function setColorScheme(colorScheme) {
     if (colorScheme === 'light dark') {
-        document.documentElement.removeAttribute('data-color-scheme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-color-scheme', systemTheme);
     } else {
         document.documentElement.setAttribute('data-color-scheme', colorScheme);
     }
 }
+
+
 
 const getDefaultColorScheme = () => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -120,6 +125,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
             <${headingLevel}>${project.title}</${headingLevel}>
             <img src="${imagePath}" alt="${project.title}">
             <p>${project.description}</p>
+            <p class="project-year">c. ${project.year}</p>
         `;
         containerElement.appendChild(article);
     });
@@ -130,10 +136,21 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     }
 }
 
-
-
-
-
 export async function fetchGitHubData(username) {
     return fetchJSON(`https://api.github.com/users/${username}`);
+}
+
+function renderProject(project) {
+    const projectElement = document.createElement("div");
+    projectElement.classList.add("project");
+
+    projectElement.innerHTML = `
+        <div class="project-content">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
+            <p class="project-year">${project.year}</p>
+        </div>
+    `;
+
+    return projectElement;
 }
