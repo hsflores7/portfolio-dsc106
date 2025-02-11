@@ -20,8 +20,8 @@
     {
         "title": "Meal Generator",
         "year": 2024,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "image": "meal-planner.png",
+        "description": "A python script that Generates a week of meals based on a JSON files with recipes, and then creates a grocery list based on those meals for that week!"
     },
     {
         "title": "Pantry Pal",

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../global.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Wishlist</h1>
+        <p><strong>Last Updated:</strong> December 13, 2024</p>
+        
+        <div class="section">
+            <h2 onclick="toggleSection(this)">Subscriptions</h2>
+            <div class="section-content">
+                <ul>
+                    <li>Adobe Plan ($19.99/month for Students)
+                        <ul>
+                            <li>Photoshop</li>
+                            <li>Premiere Pro</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 onclick="toggleSection(this)">Dungeons & Dragons</h2>
+            <div class="section-content">
+                <ul>
+                    <li><a href="https://marketplace.dndbeyond.com/core-rules/3710000">DM Guide</a></li>
+                    <li><a href="https://marketplace.dndbeyond.com/core-rules/3711000">Monster Manual</a></li>
+                    <li><a href="https://marketplace.dndbeyond.com/BB-2024-Winter/tashas-cauldron-of-everything">Tasha's Cauldron of Everything</a></li>
+                    <li><a href="https://marketplace.dndbeyond.com/BB-2024-Winter/mordenkainen-presents-monsters-of-the-multiverse">Mordenkainen's Monsters of the Multiverse</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 onclick="toggleSection(this)">Games</h2>
+            <div class="section-content">
+                <p>(I prefer Switch over PC and physical over digital copies if possible)</p>
+                <ul>
+                    <li>GameBoy Advanced
+                        <ul>
+                            <li>Pokémon Emerald</li>
+                            <li>Pokémon LeafGreen</li>
+                            <li>LoZ: Four Swords</li>
+                            <li>LoZ: The Minish Cap</li>
+                            <li>Pokémon Sapphire</li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.nintendo.com/store/products/cult-of-the-lamb-switch/">Cult of the Lamb [Switch]</a></li>
+                    <li><a href="https://www.nintendo.com/store/products/outer-wilds-switch/">Outer Wilds [Switch]</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 onclick="toggleSection(this)">Entertainment</h2>
+            <div class="section-content">
+                <ul>
+                    <li><a href="https://www.audio-technica.com/en-us/at-sb727">Vinyl Player</a>
+                        <ul>
+                            <li><a href="https://www.fangamer.com/collections/stardew-valley/products/stardew-valley-complete-ost-vinyl-box-set">Stardew Music</a></li>
+                            <li><a href="https://www.fangamer.com/collections/deltarune/products/deltarune-chapter-2-vinyl-soundtrack">Deltarune Music</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 onclick="toggleSection(this)">Books</h2>
+            <div class="section-content">
+                <ul>
+                    <li><a href="https://www.amazon.com/gp/product/0735211299">Atomic Habits</a></li>
+                    <li><a href="https://www.amazon.com/Why-We-Sleep-Unlocking-Dreams/dp/1501144316">Why We Sleep</a></li>
+                    <li><a href="https://www.amazon.com/Reality-Broken-Better-McGonigal-Hardcover/dp/B010WID1XC">Reality is Broken</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(header) {
+            let content = header.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
