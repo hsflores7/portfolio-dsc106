@@ -3,8 +3,8 @@ const ARE_WE_HOME = document.body.classList.contains('home');
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
-    // { url: 'contact/', title: 'Contact' },
-    // { url: 'resume/', title: 'Resume' },
+    { url: 'contact/', title: 'Contact' },
+    { url: 'resume/', title: 'Resume' },
     { url: 'hyperfixations/', title: 'Hyperfixations' }
 ];
 
