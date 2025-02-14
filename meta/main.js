@@ -118,12 +118,12 @@ function createScatterplot() {
 
     const xAxis = d3.axisBottom(xScale);
     const yAxis = d3.axisLeft(yScale).tickFormat((d) => {
-        let hour = d % 24; // Ensure hour stays in 0-23 range
-        let period = hour >= 12 ? "PM" : "AM"; // Determine AM/PM
-        hour = hour % 12 || 12; // Convert 0 to 12 and adjust 12-hour format
-        return `${hour} ${period}`;
-    });
-    
+    let hour = d % 24; // Ensure hour stays in 0-23 range
+    let period = hour >= 12 ? "PM" : "AM"; // Determine AM/PM
+    hour = hour % 12 || 12; // Convert 0 to 12 and adjust 12-hour format
+    return `${hour} ${period}`;
+});
+
 
     svg.append('g')
         .attr('transform', `translate(0, ${usableArea.bottom})`)
