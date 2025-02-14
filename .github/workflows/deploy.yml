@@ -21,7 +21,7 @@ jobs:
 
       - name: Run Elocuent
         run: |
-          npx elocuent -d . -o meta/loc.csv
+          npx elocuent -d . -o meta/loc.csv --spaces 4
 
       - name: Commit and Push
         run: |
