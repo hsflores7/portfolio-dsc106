@@ -232,18 +232,23 @@ article:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5em; /* Space between chart and legend */
+    gap: 1.5em;
+    /* Space between chart and legend */
     max-width: 50em;
     margin: auto;
-    flex-wrap: nowrap; /* Prevents stacking */
-    margin-bottom: 1.2em; /* Add extra space below */
+    flex-wrap: nowrap;
+    /* Prevents stacking */
+    margin-bottom: 1.2em;
+    /* Add extra space below */
 }
 
 /* Pie chart scaling */
 #projects-pie-plot {
-    width: clamp(150px, 25vw, 250px); /* Dynamic size, but not too small or too large */
+    width: clamp(150px, 25vw, 250px);
+    /* Dynamic size, but not too small or too large */
     height: clamp(150px, 25vw, 250px);
-    flex-shrink: 0; /* Prevents excessive shrinking */
+    flex-shrink: 0;
+    /* Prevents excessive shrinking */
 }
 
 
@@ -267,12 +272,14 @@ path.selected {
 .legend {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5em; /* Reduce gap for small screens */
+    gap: 0.5em;
+    /* Reduce gap for small screens */
     padding: 0.6em;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     background-color: var(--note-bg-color);
-    max-width: 100%; /* Prevents it from being too large */
+    max-width: 100%;
+    /* Prevents it from being too large */
 }
 
 /* Legend items resize based on content */
@@ -280,11 +287,15 @@ path.selected {
     display: flex;
     align-items: center;
     gap: 0.5em;
-    padding: 0.3em 0.6em; /* Tighter padding */
-    white-space: nowrap; /* Prevents awkward multi-line wrapping */
+    padding: 0.3em 0.6em;
+    /* Tighter padding */
+    white-space: nowrap;
+    /* Prevents awkward multi-line wrapping */
     /* background: var(--background-color); Optional: Keeps contrast */
-    border-radius: 6px; /* Rounded edges */
-    font-size: clamp(0.8rem, 1vw, 1rem); /* Adjusts size based on screen */
+    border-radius: 6px;
+    /* Rounded edges */
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    /* Adjusts size based on screen */
 }
 
 /* Swatches (Color Indicators) - Fixed Size */
@@ -294,7 +305,8 @@ path.selected {
     background-color: var(--color);
     border-radius: 50%;
     display: inline-block;
-    flex-shrink: 0; /* Prevents shrinking */
+    flex-shrink: 0;
+    /* Prevents shrinking */
 }
 
 /* Responsive adjustments for very small screens */
@@ -312,8 +324,10 @@ path.selected {
     }
 
     .legend-item {
-        font-size: 0.9rem; /* Slightly smaller font on small screens */
-        padding: 0.2em 0.5em; /* Less padding to fit more content */
+        font-size: 0.9rem;
+        /* Slightly smaller font on small screens */
+        padding: 0.2em 0.5em;
+        /* Less padding to fit more content */
     }
 }
 
@@ -327,8 +341,10 @@ path.selected {
 
 /* Search Bar Styling */
 .searchBar {
-    width: 90%; /* Takes most of the screen width */
-    max-width: 40em; /* Prevents excessive width */
+    width: 90%;
+    /* Takes most of the screen width */
+    max-width: 40em;
+    /* Prevents excessive width */
     padding: 0.8em 1em;
     font-size: 1rem;
     border: 2px solid var(--border-color);
@@ -608,4 +624,179 @@ blockquote.note::before {
 .stat-value {
     font-size: 1.2em;
     color: #007bff;
+}
+
+.tooltip {
+    position: absolute;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 0.75em 1em;
+    font-size: 14px;
+    color: #333;
+    max-width: 250px;
+    backdrop-filter: blur(5px);
+    pointer-events: none;
+    /* Prevents interfering with mouse events */
+    transition: opacity 0.2s ease-in-out;
+    z-index: 1000;
+    /* Ensures it appears above other elements */
+}
+
+dl.info {
+    /* Keep existing styles */
+    transition-duration: 300ms;
+    transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+dl.info dt {
+    font-weight: bold;
+    color: #666;
+}
+
+.tooltip a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tooltip a:hover {
+    text-decoration: underline;
+}
+
+.gridlines line {
+    stroke: #ddd;
+    opacity: 50%;
+    stroke-dasharray: 4 4;
+}
+
+.gridlines path {
+    display: none;
+}
+
+.axis text {
+    font-size: 12px;
+    fill: #333;
+}
+
+.axis line {
+    stroke: #666;
+    /* Slightly darker than gridlines */
+}
+
+.axis path {
+    stroke: #666;
+    stroke-width: 1.5px;
+}
+
+
+circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+circle:hover {
+    transform: scale(1.5);
+}
+
+@keyframes marching-ants {
+    to {
+        stroke-dashoffset: -8;
+        /* Moves the dashed border */
+    }
+}
+
+.selection {
+    fill-opacity: 0.1;
+    /* Slightly visible background */
+    stroke: black;
+    /* Black border */
+    stroke-opacity: 0.7;
+    /* Slightly transparent stroke */
+    stroke-dasharray: 5 3;
+    /* Dashed stroke pattern */
+    animation: marching-ants 2s linear infinite;
+    /* Moving dashes */
+}
+
+circle.selected {
+    fill: #ff6b6b;
+    /* Highlighted red */
+    stroke: black;
+    stroke-width: 2;
+}
+
+#selection-count {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+#language-breakdown-container {
+    width: 100%;
+    min-height: 80px;
+    /* Ensures it never collapses */
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.language-breakdown-row {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Ensure they stay in a row */
+    justify-content: space-between;
+    /* Distribute evenly */
+    width: 100%;
+    gap: 15px;
+    /* Adds space between elements */
+    padding: 10px;
+}
+
+.language-box {
+    background: linear-gradient(135deg, #6d83f2, #4b6cb7);
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    /* Ensures all boxes expand to fill available space */
+    max-width: 250px;
+    /* Prevents them from getting too large */
+    min-width: 120px;
+    /* Ensures they don’t shrink too much */
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.language-box:hover {
+    transform: scale(1.05);
+}
+
+
+.language-name {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.language-lines,
+.language-percent {
+    font-size: 0.9em;
+    font-weight: normal;
+    opacity: 0.9;
 }
