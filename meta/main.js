@@ -108,7 +108,7 @@ function createScatterplot() {
 
     yScale = d3
         .scaleLinear()
-        .domain([0, 24])
+        .domain([8, 24])
         .range([usableArea.bottom, usableArea.top]);
 
     // Create SVG container
@@ -177,7 +177,7 @@ function createScatterplot() {
         .attr('cx', (d) => xScale(d.datetime))
         .attr('cy', (d) => yScale(d.hourFrac))
         .attr('r', (d) => rScale(d.totalLines))
-        .attr('fill', (d) => (d.datetime.getHours() < 6 || d.datetime.getHours() > 18 ? 'steelblue' : 'orange'))
+        .attr('fill', (d) => (d.datetime.getHours() < 7 || d.datetime.getHours() > 16 ? 'steelblue' : 'orange'))
         .style('fill-opacity', 0.7)
         .attr('stroke', 'black')
         .attr('stroke-width', 1)
