@@ -3,10 +3,9 @@ const ARE_WE_HOME = document.body.classList.contains('home');
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
-    { url: 'contact/', title: 'Contact' },
     { url: 'resume/', title: 'Resume' },
-    { url: 'meta/', title: 'Meta'},
-    { url: 'hyperfixations/', title: 'Hyperfixations' }
+    { url: 'meta/', title: 'Meta'}//,
+    // { url: 'hyperfixations/', title: 'Hyperfixations' }
 ];
 
 let nav = document.createElement('nav');
@@ -155,34 +154,3 @@ function renderProject(project) {
 
     return projectElement;
 }
-
-// function calculateAge(birthDate) {
-//     const now = new Date();
-//     const diff = now - birthDate;
-//     return diff / (1000 * 60 * 60 * 24 * 365.2425); // Convert milliseconds to years
-// }
-
-// function updateAgeDisplay() {
-//     const birthDate = new Date(Date.UTC(2002, 9, 30, 23 + 8, 36)); // Replace with actual birth date
-//     const ageContainer = document.querySelector(".age-container");
-
-//     function animateAge() {
-//         const age = calculateAge(birthDate);
-//         const ageStr = age.toFixed(12); // Adjust precision here
-
-//         ageContainer.innerHTML = ""; // Clear previous digits
-//         ageStr.split("").forEach((char, index) => {
-//             const span = document.createElement("span");
-//             span.classList.add("digit");
-//             span.style.transform = `translate3d(${index}ch, 0, 0)`;
-//             span.textContent = char;
-//             ageContainer.appendChild(span);
-//         });
-
-//         requestAnimationFrame(animateAge);
-//     }
-
-//     animateAge();
-// }
-
-// updateAgeDisplay();

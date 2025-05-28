@@ -1,9 +1,17 @@
 [
     {
+        "title": "Hydrostats",
+        "year": 2025,
+        "image": "hydrostats.png",
+        "description": "The final project for UC San Diego's DSC 106 course working with a team of 4. We created a visualization of water lost while exercising to give a way to understanding how much one should be drinking to replenish their water loss.",
+        "site": "https://dhp003.github.io/hydrostats/"
+    },
+    {
         "title": "Personal Website!",
         "year": 2025,
         "image": "website.png",
-        "description": "What you're looking at right now! This has been apart of the DSC 106 Course at UC San Diego, but I plan to keep working on it beyond this course and hopefully set up a domain after the course is over!"
+        "description": "What you're looking at right now! This has been apart of the DSC 106 Course at UC San Diego, but I plan to keep working on it beyond this course and hopefully set up a domain after the course is over!",
+        "site": ""
     },
     {
         "title": "Hydrophobic",
@@ -30,45 +38,15 @@
         "description": "Developed an app using ChatGPT, Whisper, and DALL-E APIs, creating recipes from voice input into the app and storing account data via a MongoDB database. Course Project for CSE 110: Software Engineering at UC San Diego."
     },
     {
+        "title": "Boston Bike Vis",
+        "year": 2025,
+        "image": "bikewatching.png",
+        "description": "Creates a visualization of when bike riders arrive and leave certain locations across the boston metropolitan area! Apart of the course DSC 106 at UC San Diego."
+    },
+    {
         "title": "Choice Forest",
         "year": 2020,
         "image": "natures-beauty.png",
         "description": "For my final project in my Creative Writing class in my senior year of high school. I created a choose your own adventure story and used my new knowledge of Java to write an in compiler way of making each choice. I had only knew programming from my APCS class and I wanted to try to make something cool with that knowledge. Maybe one day I'll upgrade it to a more user friendly webpage!"
-    },
-    {
-        "title": "",
-        "year": 2022,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
-    },
-    {
-        "title": "",
-        "year": 2022,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
-    },
-    {
-        "title": "",
-        "year": 2022,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
-    },
-    {
-        "title": "",
-        "year": 2021,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
-    },
-    {
-        "title": "",
-        "year": 2021,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
-    },
-    {
-        "title": "",
-        "year": 2021,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
     }
 ]
