@@ -26,12 +26,6 @@
         "description": "Created some simple python code to create dnd roll distributions with the plotly graph library. Next step, create an interactive webpage!"
     },
     {
-        "title": "Meal Generator",
-        "year": 2024,
-        "image": "meal-planner.png",
-        "description": "A python script that Generates a week of meals based on a JSON files with recipes, and then creates a grocery list based on those meals for that week!"
-    },
-    {
         "title": "Pantry Pal",
         "year": 2023,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
@@ -48,5 +42,11 @@
         "year": 2020,
         "image": "natures-beauty.png",
         "description": "For my final project in my Creative Writing class in my senior year of high school. I created a choose your own adventure story and used my new knowledge of Java to write an in compiler way of making each choice. I had only knew programming from my APCS class and I wanted to try to make something cool with that knowledge. Maybe one day I'll upgrade it to a more user friendly webpage!"
+    },
+    {
+        "title": "Meal Generator",
+        "year": 2024,
+        "image": "meal-planner.png",
+        "description": "A python script that Generates a week of meals based on a JSON files with recipes, and then creates a grocery list based on those meals for that week!"
     }
 ]

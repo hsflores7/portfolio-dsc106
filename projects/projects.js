@@ -43,9 +43,13 @@ function renderPieChart(projectsGiven) {
         label: year.toString()
     }));
 
+    // Sort years descending (most recent first)
+    data.sort((a, b) => Number(b.label) - Number(a.label));
+
     if (data.length === 0) return;
 
-    const colors = d3.scaleOrdinal(d3.schemeTableau10);
+    const customColors = ["#e48affff", "#60c7ffff", "#b0db6fff", "#ffc4c3ff", "#789fe8ff", "#955251", "#b565a7", "#009b77", "#dd4124", "#45b8ac"];
+    const colors = d3.scaleOrdinal(customColors);
 
     const arcGenerator = d3.arc()
         .innerRadius(0)

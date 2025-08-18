@@ -1,62 +1,62 @@
 [
     {
         "title": "Dogs",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "image": "goldiencopper.png",
         "description": "Perhaps the orignal hyperfixation, I just love dogs, always have. As a kid, I had like 5 birthday parties in a row that were Dog themed. I've grown up always having a beagle roaming around the house from the day I was born till now. Pictured is my dog Copper and Goldie."
     },
     {
         "title": "Splatoon 3",
         "image": "splatoon3.jpg",
-        "description": "I play Splatoon 3 at a competitive level both for a team called Nonbinary Fuss and for my university UC San Diego on UCSD Esports Gold. You can find my Splatoon Resume of sorts here: Sendou Profile"
+        "description": "I play Splatoon 3 at a competitive level both for a team called Nonbinary Fuss and for my university UC San Diego on the varsity team UCSD Esports Gold where in Spring 25 we won the Collegiate Championship."
     },
     {
         "title": "Dungeons & Dragons",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "image": "dnd-logo.png",
+        "description": "I started playing Dungeons & Dragons in high school and have been hooked ever since. I love the creativity and storytelling aspects of the game, as well as the social interaction with friends. I've played various campaigns and even tried my hand at being a Dungeon Master."
     },
     {
         "title": "Spreadsheets",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "image": "spreadsheets.png",
+        "description": "I have a passion for spreadsheets and data organization. I enjoy creating complex formulas and automating tasks to improve efficiency. It's satisfying to see data come together in a meaningful way."
     },
     {
-        "title": "Video Games",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "title": "Baseball",
+        "image": "baseball.png",
+        "description": "I have been a fan of baseball since I was a child. I love the strategy and teamwork involved in the game, as well as the excitement of watching live games. My favorite team is the Seattle Mariners."
     },
     {
-        "title": "",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "title": "Stardew Valley",
+        "image": "stardew-valley.png",
+        "description": "I enjoy playing Stardew Valley as a way to relax and unwind. The game has been there for me during hard times, and has been the catalyst for many friendships and relationships, including my partner who I got to know through inviting her to a group to play in High School."
     },
     {
-        "title": "",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "title": "Traveling",
+        "image": "traveling.png",
+        "description": "When I was a kid I had the wonderful opportunity to live in Southern Italy for a few years. Where I got to travel around Europe and experience different cultures. Since then I've loved traveling and exploring new places, trying new foods, and meeting new people."
     },
     {
-        "title": "",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "title": "Music",
+        "image": "music.jpg",
+        "description": "I adore listening to music, I'm nearly always listening or humming something. And I've recently been trying to discover new music as well, so I would love recs. In addtional I can play the saxophone, clarinet, and piano. And I've dabbled in music production a bit."
     },
     {
-        "title": "",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "title": "Urban Design",
+        "image": "",
+        "description": "I'm passionate about urban design and the way it shapes our cities and communities. I believe that well-designed public spaces can improve quality of life and foster social interaction. I enjoy studying different urban design principles and exploring cities to see how they are implemented. And with my final quarter at UCSD I got to take an Urban Planning class focused on Social Theory and City Theory and has absolutly evolved my thinking about society, people, and how I perceive cities."
     },
     {
-        "title": "",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "title": "Logistics",
+        "image": "",
+        "description": "I have a keen interest in logistics and supply chain management. I enjoy analyzing processes and finding ways to optimize efficiency. The challenge of coordinating various elements to ensure smooth operations is something I find very fascinating. I've watched many of videos on the topic in my free time."
     },
     {
-        "title": "",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "title": "Hiking",
+        "image": "hiking.png",
+        "description": "I love hiking and spending time in nature. It's a great way to clear my mind and stay active. I enjoy exploring new trails and taking in the beautiful scenery. Anything with a warterfall and I'm sold."
     },
     {
-        "title": "",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": ""
+        "title": "Pokémon",
+        "image": "pokemon.jpg",
+        "description": "I've been a fan of Pokémon since I was a kid. I love the creativity and strategy involved in the games, as well as the rich lore and world-building. I've played almost every mainline game and enjoy collecting cards and watching the animated series. My first game was Pokémon Black on the Nintendo DS, and it's still my favorite one to this day."
     }
 ]
