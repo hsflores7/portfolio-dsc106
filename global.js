@@ -5,7 +5,7 @@ let pages = [
     { url: 'projects/', title: 'Projects' },
     { url: 'resume/', title: 'Resume' },
     // { url: 'meta/', title: 'Meta'}//,
-    { url: 'hyperfixations/', title: 'Hyperfixations' }
+    // { url: 'hyperfixations/', title: 'Hyperfixations' }
 ];
 
 let nav = document.createElement('nav');
@@ -104,18 +104,18 @@ export function renderProjects(projects, container, headingTag = "h2") {
     projects.forEach(project => {
         const article = document.createElement("article");
 
-        // Add a link icon if site exists
-        if (project.site && project.site.trim() !== "") {
-            const link = document.createElement("a");
-            link.href = project.site;
-            link.target = "_blank";
-            link.rel = "noopener noreferrer";
-            link.className = "project-link-icon";
-            link.title = "Open project site";
-            // SVG link icon (accessible)
-            link.innerHTML = `<svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M14.59 2.59a2 2 0 0 1 2.82 2.82l-6.3 6.3a2 2 0 0 1-2.82-2.82l1.3-1.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 6V2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-            article.appendChild(link);
-        }
+        // // Add a link icon if site exists
+        // if (project.site && project.site.trim() !== "") {
+        //     const link = document.createElement("a");
+        //     link.href = project.site;
+        //     link.target = "_blank";
+        //     link.rel = "noopener noreferrer";
+        //     link.className = "project-link-icon";
+        //     link.title = "Open project site";
+        //     // SVG link icon (accessible)
+        //     link.innerHTML = `<svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M14.59 2.59a2 2 0 0 1 2.82 2.82l-6.3 6.3a2 2 0 0 1-2.82-2.82l1.3-1.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 6V2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+        //     article.appendChild(link);
+        // }
 
         // Check if the image is an online URL (starts with http or https)
         let imagePath;
@@ -163,25 +163,22 @@ export async function fetchGitHubData(username) {
     return fetchJSON(`https://api.github.com/users/${username}`);
 }
 
-function renderProject(project) {
-    const projectElement = document.createElement("div");
-    projectElement.classList.add("project");
+const emailLink = document.getElementById('email-link');
+if (emailLink) {
+    emailLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        navigator.clipboard.writeText('santiagoflo30@gmail.com').then(() => {
+            showToast();
+        });
+    });
+}
 
-    projectElement.innerHTML = `
-        <div class="project-content">
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <p class="project-year">${project.year}</p>
-        </div>
-        ${project.site ? `
-            <a class="project-link-icon" href="${project.site}" target="_blank" rel="noopener noreferrer" title="Visit project site">
-                <!-- SVG link icon -->
-                <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M14 3h7v7m-1.5-5.5L10 14m-4 0v7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        ` : ""}
-    `;
-
-    return projectElement;
+function showToast() {
+    const toast = document.getElementById('toast');
+    if (toast) {
+        toast.classList.add('show');         // Fade it in
+        setTimeout(() => {
+            toast.classList.remove('show');    // Fade it out after 2.5 seconds
+        }, 2500);
+    }
 }

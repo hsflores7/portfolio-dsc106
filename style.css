@@ -34,10 +34,39 @@ body {
     padding: 20px;
     background-color: var(--background-color);
     color: var(--text-color);
+    overflow-y: scroll;
+    /* Add the ability to scroll */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    padding: 3ch;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    color: var(--hyperlink-color);
+    text-decoration: none;
 }
 
 a:visited {
     color: var(--hyperlink-color);
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .contact a:visited {
@@ -199,7 +228,8 @@ article:hover {
 }
 
 .projects article {
-    position: relative; /* Add this if not present */
+    position: relative;
+    /* Add this if not present */
     display: grid;
     grid-template-rows: auto;
     grid-row: span 3;
@@ -253,156 +283,12 @@ article:hover {
     text-decoration: none;
     font-size: 1.5em;
 }
+
 .project-link-icon:hover,
 .project-link-icon:focus {
     opacity: 1;
     color: var(--hover-color);
 }
-
-/* ----------------------------- Pie Char ----------------------------- */
-.chart-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5em;
-    /* Space between chart and legend */
-    max-width: 50em;
-    margin: auto;
-    flex-wrap: nowrap;
-    /* Prevents stacking */
-    margin-bottom: 1.2em;
-    /* Add extra space below */
-}
-
-/* Pie chart scaling */
-#projects-pie-plot {
-    width: clamp(150px, 25vw, 250px);
-    /* Dynamic size, but not too small or too large */
-    height: clamp(150px, 25vw, 250px);
-    flex-shrink: 0;
-    /* Prevents excessive shrinking */
-}
-
-
-path {
-    cursor: pointer;
-    transition: opacity 300ms ease-in-out, fill 200ms ease-in-out;
-}
-
-/* Dim other slices when one is hovered */
-#projects-pie-plot:has(path:hover) path:not(:hover) {
-    opacity: 0.5;
-}
-
-/* Highlight selected wedge */
-path.selected {
-    fill: oklch(60% 45% 0) !important;
-}
-
-
-/* Legend container - dynamically resizes */
-.legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    /* Reduce gap for small screens */
-    padding: 0.6em;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--note-bg-color);
-    max-width: 100%;
-    /* Prevents it from being too large */
-}
-
-/* Legend items resize based on content */
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    padding: 0.3em 0.6em;
-    /* Tighter padding */
-    white-space: nowrap;
-    /* Prevents awkward multi-line wrapping */
-    /* background: var(--background-color); Optional: Keeps contrast */
-    border-radius: 6px;
-    /* Rounded edges */
-    font-size: clamp(0.8rem, 1vw, 1rem);
-    /* Adjusts size based on screen */
-}
-
-/* Swatches (Color Indicators) - Fixed Size */
-.swatch {
-    width: 0.8em;
-    height: 0.8em;
-    background-color: var(--color);
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-    /* Prevents shrinking */
-}
-
-/* Responsive adjustments for very small screens */
-@media (max-width: 600px) {
-    .chart-container {
-        max-width: 100%;
-        gap: 0.6em;
-    }
-
-    .legend {
-        justify-content: center;
-        max-width: 80%;
-        gap: 0.3em;
-        padding: 0.4em;
-    }
-
-    .legend-item {
-        font-size: 0.9rem;
-        /* Slightly smaller font on small screens */
-        padding: 0.2em 0.5em;
-        /* Less padding to fit more content */
-    }
-}
-
-/* ----------------------------- Search Bar ----------------------------- */
-.search-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 1em 0;
-}
-
-/* Search Bar Styling */
-.searchBar {
-    width: 90%;
-    /* Takes most of the screen width */
-    max-width: 40em;
-    /* Prevents excessive width */
-    padding: 0.8em 1em;
-    font-size: 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    box-shadow: 0px 2px 5px var(--shadow-color);
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-/* On focus, make the search bar pop */
-.searchBar:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0px 4px 10px var(--shadow-color);
-}
-
-/* Ensure it fits light/dark mode */
-:root[data-color-scheme="light"] .searchBar {
-    border-color: #ccc;
-}
-
-:root[data-color-scheme="dark"] .searchBar {
-    border-color: #444;
-}
-
 
 /* ----------------------------- Navbar ----------------------------- */
 .navbar {
@@ -626,125 +512,6 @@ blockquote.note::before {
     outline: none;
 }
 
-/* ------------------------------ Stats ----------------------------------- */
-.stats-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 10px;
-    background: var(--border-color);
-    border-radius: 10px;
-}
-
-.stat-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background: var(--note-bg-color);
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    min-width: 120px;
-}
-
-.stat-label {
-    font-weight: bold;
-    color: var(--color);
-}
-
-.stat-value {
-    font-size: 1.2em;
-    color: #007bff;
-}
-
-.tooltip {
-    position: absolute;
-    display: none;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    padding: 0.75em 1em;
-    font-size: 14px;
-    color: #333;
-    max-width: 250px;
-    backdrop-filter: blur(5px);
-    pointer-events: none;
-    /* Prevents interfering with mouse events */
-    transition: opacity 0.2s ease-in-out;
-    z-index: 1000;
-    /* Ensures it appears above other elements */
-}
-
-dl.info {
-    /* Keep existing styles */
-    transition-duration: 300ms;
-    transition-property: opacity, visibility;
-}
-
-dl.info[hidden]:not(:hover, :focus-within) {
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-dl.info dt {
-    font-weight: bold;
-    color: #666;
-}
-
-.tooltip a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.tooltip a:hover {
-    text-decoration: underline;
-}
-
-.gridlines line {
-    stroke: #ddd;
-    opacity: 50%;
-    stroke-dasharray: 4 4;
-}
-
-.gridlines path {
-    display: none;
-}
-
-.axis text {
-    font-size: 12px;
-    fill: #333;
-}
-
-.axis line {
-    stroke: #666;
-    /* Slightly darker than gridlines */
-}
-
-.axis path {
-    stroke: #666;
-    stroke-width: 1.5px;
-}
-
-
-circle {
-    transition: 200ms;
-    transform-origin: center;
-    transform-box: fill-box;
-}
-
-circle:hover {
-    transform: scale(1.5);
-}
-
-@keyframes marching-ants {
-    to {
-        stroke-dashoffset: -8;
-        /* Moves the dashed border */
-    }
-}
 
 .selection {
     fill-opacity: 0.1;
@@ -772,63 +539,30 @@ circle.selected {
     font-size: 1.2em;
 }
 
-#language-breakdown-container {
-    width: 100%;
-    min-height: 80px;
-    /* Ensures it never collapses */
-    margin-top: 10px;
-    padding: 10px;
-    background: var(--border-color);
+/* ----------------- Toast --------------------- */
+#toast {
+    position: fixed;
+    /* Stays in place even when scrolling */
+    bottom: 30px;
+    /* Distance from the bottom of the screen */
+    left: 50%;
+    /* Start at the horizontal center */
+    transform: translateX(-50%);
+    /* Nudge left by half its own width to truly center it */
+    background-color: var(--accent-color);
+    color: black;
+    padding: 12px 24px;
     border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 14px;
+    opacity: 0;
+    /* Hidden by default */
+    transition: opacity 0.4s ease;
+    /* Smooth fade in/out */
+    pointer-events: none;
+    /* Prevents it from interfering with clicks */
 }
 
-.language-breakdown-row {
-    display: flex;
-    flex-wrap: nowrap;
-    /* Ensure they stay in a row */
-    justify-content: space-between;
-    /* Distribute evenly */
-    width: 100%;
-    gap: 15px;
-    /* Adds space between elements */
-    padding: 10px;
-}
-
-.language-box {
-    background: linear-gradient(135deg, #6d83f2, #4b6cb7);
-    color: white;
-    padding: 12px;
-    border-radius: 6px;
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-    flex: 1;
-    /* Ensures all boxes expand to fill available space */
-    max-width: 250px;
-    /* Prevents them from getting too large */
-    min-width: 120px;
-    /* Ensures they don’t shrink too much */
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
-}
-
-.language-box:hover {
-    transform: scale(1.05);
-}
-
-
-.language-name {
-    font-size: 1.2em;
-    text-transform: uppercase;
-}
-
-.language-lines,
-.language-percent {
-    font-size: 0.9em;
-    font-weight: normal;
-    opacity: 0.9;
+#toast.show {
+    opacity: 1;
+    /* Fully visible when the class is added */
 }
