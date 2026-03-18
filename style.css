@@ -100,7 +100,7 @@ a:hover {
 }
 
 .bio img {
-    width: calc(100% - 2em);
+    width: 100%;
     height: auto;
     object-fit: contain;
     border-radius: 20%;
@@ -432,55 +432,6 @@ blockquote.note::before {
     text-transform: uppercase;
     font-size: 0.75em;
     padding-bottom: 0.125rem;
-}
-
-/* ----------------------------- Profile ----------------------------- */
-#profile-stats {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 15px;
-    max-width: 600px;
-}
-
-#profile-stats img {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px var(--shadow-color);
-}
-
-#profile-stats dl {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
-    gap: 10px 40px;
-    text-align: center;
-}
-
-#profile-stats dt {
-    font-weight: bold;
-    grid-row: 1;
-}
-
-#profile-stats dd {
-    grid-row: 2;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 0;
-}
-
-@media (max-width: 600px) {
-    #profile-stats {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    #profile-stats dl {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
-    }
 }
 
 /* Theme Selector */
