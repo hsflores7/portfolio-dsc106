@@ -73,6 +73,29 @@ a:hover {
     color: var(--hyperlink-color);
 }
 
+.bio {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1em;
+}
+
+.pronouns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.pronouns span {
+    background-color: var(--accent-color);
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 /* Resume Style */
 .contact {
     text-align: center;

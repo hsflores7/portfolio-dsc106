@@ -4,7 +4,6 @@ let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
     { url: 'resume/', title: 'Resume' },
-    // { url: 'meta/', title: 'Meta'}//,
     // { url: 'hyperfixations/', title: 'Hyperfixations' }
 ];
 
@@ -103,19 +102,6 @@ export function renderProjects(projects, container, headingTag = "h2") {
     container.innerHTML = "";
     projects.forEach(project => {
         const article = document.createElement("article");
-
-        // // Add a link icon if site exists
-        // if (project.site && project.site.trim() !== "") {
-        //     const link = document.createElement("a");
-        //     link.href = project.site;
-        //     link.target = "_blank";
-        //     link.rel = "noopener noreferrer";
-        //     link.className = "project-link-icon";
-        //     link.title = "Open project site";
-        //     // SVG link icon (accessible)
-        //     link.innerHTML = `<svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M14.59 2.59a2 2 0 0 1 2.82 2.82l-6.3 6.3a2 2 0 0 1-2.82-2.82l1.3-1.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 6V2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-        //     article.appendChild(link);
-        // }
 
         // Check if the image is an online URL (starts with http or https)
         let imagePath;
