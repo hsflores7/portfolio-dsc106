@@ -168,3 +168,94 @@ function showToast() {
         }, 2500);
     }
 }
+
+function easeInOutCubic(t) {
+    t *= 2
+    if (t < 1) return (t * t * t) / 2
+    t -= 2
+    return (t * t * t + 2) / 2
+}
+
+// Code used from sheeptester's portfolio: https://sheeptester.github.io/portfolio/
+const BIRTHDAY = 1036013760000 // new Date('2002-10-30T15:36').getTime()
+const MS_IN_YR = 1000 * 60 * 60 * 24 * 365.242199
+function getAge(now = Date.now()) {
+    return ((now - BIRTHDAY) / MS_IN_YR).toFixed(13)
+}
+const ANIM_LENGTH = 500 // ms
+const ALPHA = 0.8
+
+const ageSpan = document.getElementById('age')
+// ageSpan.title = 'Click to see me age in real time'
+if (ageSpan) {
+    ageSpan.textContent = Math.floor((Date.now() - BIRTHDAY) / MS_IN_YR)
+    ageSpan.classList.add('age-clickable')
+    ageSpan.tabIndex = 0
+    ageSpan.addEventListener('click', startAgeAnim, { once: true })
+}
+
+function startAgeAnim() {
+    const ageWrapper = document.createElement('code')
+    ageWrapper.classList.add('age')
+    ageWrapper.role = 'text'
+    const age = getAge()
+    ageWrapper.style.width = age.length + 'ch'
+    const decimal = age.indexOf('.')
+    const digits = new Array(age.length)
+    let sigfigs = Math.floor((Date.now() - BIRTHDAY) / 10000).toString().length
+    for (let i = 0; i < age.length; i++) {
+        const digit = document.createElement('span')
+        digits[i] = {
+            elem: digit,
+            exponent:
+                i === decimal ? null : i < decimal ? decimal - i - 1 : decimal - i
+        }
+        if (age[i] !== '.') {
+            if (sigfigs <= 0) {
+                digit.classList.add('insignificant')
+                digit.title = 'This digit is purely an estimation.'
+            }
+            sigfigs--
+        } else {
+            digit.textContent = '.'
+            digit.style.transform = `translate3d(${i}ch, 0, 0)`
+        }
+        ageWrapper.append(digit)
+    }
+    ageWrapper.append('\xa0') // nbsp
+    ageSpan.replaceWith(ageWrapper)
+    function display() {
+        const now = Date.now()
+        const age = getAge(now)
+        for (let i = 0; i < age.length; i++) {
+            const digit = digits[i]
+            if (digit.exponent !== null) {
+                const interval = 10 ** digit.exponent * MS_IN_YR
+                const animationTime = Math.min(interval, ANIM_LENGTH)
+                const time = (now - BIRTHDAY) % interval
+                if (digit.elem.textContent !== age[i]) {
+                    digit.elem.textContent = age[i]
+                }
+                if (time < animationTime) {
+                    const interp = easeInOutCubic(time / animationTime)
+                    digit.elem.style.transform = `translate3d(${i}ch, ${interp - 1}em, 0)`
+                    digit.elem.style.color = `rgba(255, 255, 255, ${interp * ALPHA})`
+                    digit.elem.style.setProperty(
+                        '--last',
+                        `rgba(255, 255, 255, ${(1 - interp) * ALPHA})`
+                    )
+                    digit.elem.dataset.last = (+age[i] + 9) % 10
+                    digit.wasStatic = false
+                } else if (!digit.wasStatic) {
+                    digit.elem.style.transform = `translate3d(${i}ch, 0, 0)`
+                    digit.elem.style.color = null
+                    digit.elem.style.removeProperty('--last')
+                    delete digit.elem.dataset.last
+                    digit.wasStatic = true
+                }
+            }
+        }
+        window.requestAnimationFrame(display)
+    }
+    display()
+}

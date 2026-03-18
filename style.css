@@ -7,9 +7,9 @@
     --hover-color: #F5A9B8;
     --border-color: #ccc;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --note-bg-color: rgba(44, 132, 250, 0.2);
-    --note-border-color: #183385;
-    --hyperlink-color: #4194b5;
+    --note-bg-color: rgba(255, 184, 102, 0.542);
+    --note-border-color: #ffa51f;
+    --hyperlink-color: #00b7ff;
 }
 
 /* Dark mode overrides */
@@ -21,25 +21,22 @@
     --hover-color: #F5A9B8;
     --border-color: #444;
     --shadow-color: rgba(0, 0, 0, 0.6);
-    --note-bg-color: rgba(44, 132, 250, 0.1);
-    --note-border-color: #5BCEFA;
+    --note-bg-color: rgba(89, 70, 48, 0.542);
+    --note-border-color: #ffb84e;
     --hyperlink-color: #5BCEFA;
 }
 
 /* Global styles */
 body {
-    font: 100%/1.5 system-ui;
+    font: 100%/1.5 'Source Sans Pro', sans-serif;
     max-width: 100ch;
     margin: 0 auto;
     padding: 20px;
     background-color: var(--background-color);
     color: var(--text-color);
     overflow-y: scroll;
-    /* Add the ability to scroll */
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
 }
 
 .row {
@@ -49,6 +46,8 @@ body {
 .column {
     flex: 50%;
     padding: 3ch;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -76,24 +75,60 @@ a:hover {
 .bio {
     display: flex;
     flex-direction: column;
-    gap: 1px;
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1em;
+    gap: 10px;
+    background-color: var(--border-color);
+    /* border: 1px solid var(--border-color); */
+    border-radius: 50px;
+    padding: 1.5em;
+    /* margin-top: 30px; */
 }
 
-.pronouns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+.bio p {
+    margin: 0;
 }
 
-.pronouns span {
+.bio img {
+    width: calc(100% - 2em);
+    height: auto;
+    border-radius: 20%;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    margin: 0 auto 1em auto;
+}
+
+.attribute {
     background-color: var(--accent-color);
-    color: #000000;
+    color: var(--nav-text-color);
+    text-transform: uppercase;
+    font-size: 0.8em;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 50px;
+}
+
+.age-clickable {
+    cursor: pointer;
+    color: rgba(255,255,255,0.9);
+}
+
+.age {
+    position: relative;
+    display: inline-block;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.age span {
+    position: absolute;
+    -webkit-user-select: text;
+    user-select: text;
+    color: rgba(255,255,255,0.8);
+}
+
+.age span::after {
+    content: attr(data-last);
+    color: var(--last);
+    position: absolute;
+    top: 1em;
+    left: 0;
 }
 
 /* Resume Style */
@@ -231,10 +266,6 @@ img {
     height: auto;
 }
 
-img:hover {
-    transform: scale(1.02);
-}
-
 article {
     transition: transform 0.3s ease-in-out;
 }
@@ -364,70 +395,6 @@ article:hover {
     }
 }
 
-/* ----------------------------- Forms ----------------------------- */
-form * {
-    box-sizing: border-box;
-}
-
-form {
-    max-width: 600px;
-    margin: 2rem auto;
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 8px var(--shadow-color);
-    border-radius: 8px;
-    padding: 1.5rem;
-    color: var(--text-color);
-}
-
-form label {
-    display: block;
-    margin-block: 0.1rem;
-    font-weight: bold;
-}
-
-form input,
-form textarea,
-form button {
-    display: block;
-    width: 100%;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    margin-block: 0.5rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 0.75rem;
-    font-size: 1rem;
-}
-
-form input:focus,
-form textarea:focus,
-form button:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 5px var(--accent-color);
-}
-
-form textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-form button {
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s ease;
-    padding: 0.75rem;
-}
-
-form button:hover {
-    background-color: var(--hover-color);
-}
-
 /* ----------------------------- Notes ----------------------------- */
 p.note,
 blockquote.note {
@@ -437,6 +404,8 @@ blockquote.note {
     box-shadow: 0 1px 2px var(--shadow-color), 0 3px 10px var(--shadow-color);
     padding: 0.8rem;
     color: var(--text-color);
+    width: 50%;
+    margin: 1.5em auto;
 }
 
 p.note::before,
@@ -535,32 +504,6 @@ blockquote.note::before {
     outline: none;
 }
 
-
-.selection {
-    fill-opacity: 0.1;
-    /* Slightly visible background */
-    stroke: black;
-    /* Black border */
-    stroke-opacity: 0.7;
-    /* Slightly transparent stroke */
-    stroke-dasharray: 5 3;
-    /* Dashed stroke pattern */
-    animation: marching-ants 2s linear infinite;
-    /* Moving dashes */
-}
-
-circle.selected {
-    fill: #ff6b6b;
-    /* Highlighted red */
-    stroke: black;
-    stroke-width: 2;
-}
-
-#selection-count {
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 1.2em;
-}
 
 /* ----------------- Toast --------------------- */
 #toast {

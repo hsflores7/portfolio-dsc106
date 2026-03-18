@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hunter Flores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="global.js"></script>
     <script src="index.js" type="module" defer></script>
@@ -16,21 +17,30 @@
 
 <body class="home">
     <div class="header">
-        <h1>Hello! I'm Hunter Flores!</h1>
+        <h1>About me</h1>
     </div>
     <div class="row">
         <div class="column">
-            <img src="images/porfolio_photo.png" alt="Portrait of Hunter Flores">
+            <div class="bio">
+                <img src="images/porfolio_photo.png" alt="A picture of myself with the seattle skyline in the background, taken by my friend, Brinda!">
+                <p> <span class="attribute">Name</span> Hunter Flores </p>
+                <p> <span class="attribute">Pronouns</span> she/her/they/them </p>
+                <p> <span class="attribute">Location</span> Chicago/Champaign, IL </p>
+                <p> <span class="attribute">Age</span>
+                    <code id="age" class="age" role="text" style="width: 2ch;">
+                                <!-- Dynamically inserted with global.js -->
+                            </code>
+                    years
+                </p>
+                <p> <span class="attribute">University</span> University of Illinois Urbana-Champaign </p>
+            </div>
         </div>
         <div class="column">
-            <!-- <div class="bio"> -->
-                <!-- Pronouns: <div class="pronouns"> <span>She</span> <span>Her</span> <span>They</span> <span>Them</span> </div> -->
-                <p>I'm a recent graduate of UC San Diego &#128305 in Revelle &#9875 where I studied Cognitive Science and Computer Science.</p>
-                <p>I am currently studying Computer Science at University of Illinois Urbana-Champaign.</p>
-                <p>Full-stack developer, data scientist and game developer.</p>
-                <p>In my free time, I enjoy running, playing video games, and travelling!</p>
-                <p>Feel free to check out my <a href="https://github.com/hsflores7">GitHub</a> profile to see some of my work!</p>
-            <!-- </div> -->
+            <p>I graduated from UC San Diego in June of 2025 where I studied Cognitive Science and Computer Science.</p>
+            <p>In January 2026, I began my Masters of Computer Science at University of Illinois Urbana-Champaign.</p>
+            <p>Full-stack developer, data scientist and game developer.</p>
+            <p>In my free time, I enjoy running, playing games, and traveling!</p>
+            <p>Feel free to check out my <a href="https://github.com/hsflores7">GitHub</a> profile to see some of my work!</p>
         </div>
     </div>
 
