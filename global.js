@@ -239,17 +239,26 @@ function startAgeAnim() {
                 if (time < animationTime) {
                     const interp = easeInOutCubic(time / animationTime)
                     digit.elem.style.transform = `translate3d(${i}ch, ${interp - 1}em, 0)`
-                    digit.elem.style.color = `rgba(255, 255, 255, ${interp * ALPHA})`
-                    digit.elem.style.setProperty(
-                        '--last',
-                        `rgba(255, 255, 255, ${(1 - interp) * ALPHA})`
-                    )
+                    const currentScheme = document.documentElement.getAttribute('data-color-scheme');
+                    if (currentScheme === 'dark') {
+                        digit.elem.style.color = `rgba(255, 255, 255, ${interp * ALPHA})`
+                        digit.elem.style.setProperty(
+                            '--text-color',
+                            `rgba(255, 255, 255, ${(1 - interp) * ALPHA})`
+                        )
+                    } else {
+                        digit.elem.style.color = `rgba(0, 0, 0, ${interp * ALPHA})`
+                        digit.elem.style.setProperty(
+                            '--text-color',
+                            `rgba(0, 0, 0, ${(1 - interp) * ALPHA})`
+                        )
+                    }
                     digit.elem.dataset.last = (+age[i] + 9) % 10
                     digit.wasStatic = false
                 } else if (!digit.wasStatic) {
                     digit.elem.style.transform = `translate3d(${i}ch, 0, 0)`
                     digit.elem.style.color = null
-                    digit.elem.style.removeProperty('--last')
+                    digit.elem.style.removeProperty('--text-color')
                     delete digit.elem.dataset.last
                     digit.wasStatic = true
                 }

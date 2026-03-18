@@ -96,12 +96,13 @@ a:hover {
 
 .bio p {
     margin: 0;
-    color: #cbcbcb;
+    /* color: #cbcbcb; */
 }
 
 .bio img {
     width: calc(100% - 2em);
     height: auto;
+    object-fit: contain;
     border-radius: 20%;
     box-shadow: 0 4px 8px var(--shadow-color);
     margin: 0 auto 1em auto;
@@ -118,7 +119,8 @@ a:hover {
 
 .age-clickable {
     cursor: pointer;
-    color: rgba(255,255,255,0.9);
+    /* color: rgba(255,255,255,0.9); */
+    color: var(--text-color)
 }
 
 .age {
@@ -132,12 +134,13 @@ a:hover {
     position: absolute;
     -webkit-user-select: text;
     user-select: text;
-    color: rgba(255,255,255,0.8);
+    /* color: rgba(255,255,255,0.8); */
+    color: var(--text-color)
 }
 
 .age span::after {
     content: attr(data-last);
-    color: var(--last);
+    color: var(--text-color);
     position: absolute;
     top: 1em;
     left: 0;
